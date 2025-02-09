@@ -1,0 +1,21 @@
+# Environment variables
+.env
+.git-credentials
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# Project specific
+input/
+output/
+*.docx

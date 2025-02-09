@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: cv_reformatter
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - ./input:/app/input
+      - ./output:/app/output
+      - /app/.venv  # Exclude .venv directory from mounting
+    environment:
+      - PYTHONPATH=/app
+      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT}
+      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+    stdin_open: true  # docker run -i
+    tty: true        # docker run -t
